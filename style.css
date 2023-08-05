@@ -1,14 +1,5 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-}
-.navbar_blue_banner{
-background-color: #541554;
-}
 
-/* **************************NAVBAR************************************* */
+/* ***********************NAVBAR*************************************  */
 nav{
     display: flex;
     align-items: center;
@@ -278,8 +269,5 @@ header{
     
 
 }
-  
-  
-  
-  
+
 /* **************************MAIN************************************* */
