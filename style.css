@@ -400,7 +400,7 @@ header {
   justify-content: space-around;
   align-items: center;
   margin-top: 5rem;
-  text-align: left !important;
+  text-align: left ;
 }
 .percents span:first-child {
   color: #611f69;
@@ -509,6 +509,7 @@ header {
   position: relative;
   cursor: pointer;
   transition: all 0.3s ease;
+  margin: 0.5rem;
 }
 .card_subheader {
   padding: 1rem 0;
@@ -674,17 +675,24 @@ footer {
   display: flex;
   align-items: center;
 }
-.social_media a:not(.social_media a:first-child) {
-  color: #000;
+.icons{
+    text-decoration: none;
+  margin-right: 1rem;
+  display: flex;
+  align-items: center;
 }
-.social_media a:not(.social_media a:first-child):hover {
+
+.icons a{
+    color: #000;
+}
+.icons a:hover {
   color: #1264a3;
 }
 .social_media a:last-child {
   text-decoration: none;
   margin-right: 0;
 }
-.social_media a:first-child {
+.social_media a:first-child:not(.icons a) {
   font-size: 14px;
   font-weight: 700;
   color: #1264a3;
@@ -692,6 +700,9 @@ footer {
 .company_rights {
   font-size: 12px;
   color: #454245;
+}
+.mobile_footer{
+    display: none;
 }
 /* **************************FOOTER************************************* */
 /* **************************MOBILE************************************ */
@@ -702,6 +713,15 @@ footer {
   }
   .main_title_1 {
     font-size: 50px;
+  }
+  .main_logos{
+    gap: 2rem;
+  }
+  .cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
   }
 }
 @media (max-width: 1100px) {
@@ -729,6 +749,87 @@ footer {
   .section_1 {
     padding: 2rem;
   }
+  .main_part{
+    padding: 1rem;
+  }
+  .main_first_part {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    margin-top: 3rem;
+  }
+  .text_part1{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 0;
+  }
+  .main_second_part {
+    display: flex;
+    align-items: end;
+    flex-direction: column-reverse;
+  }
+  .colored_part2{
+    margin-right: 0;
+  }
+  .video_part{
+    flex-direction: column;
+  }
+  .video_right_part{
+    padding: 1rem;
+  }
+  footer{
+    padding: 1rem;
+  }
+  .first_footer_div{
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+  }
+  .footer_text {
+    margin-top: 1rem;
+    width: 85%;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+  }
+}
+@media (max-width: 1000px) {
+    .emojis_div img{
+        display: none;
+    }
+    .emojis_div {
+        padding: 3rem 1rem;
+      }
+      .see_all > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 1rem;
+        width: 80%;
+      }
+      .see_all button {
+        width: 100% !important;
+      }
+      .see_all h1{
+        padding: 1rem;
+        font-size: 35px;
+      }
+      .main_cards_div{
+        padding: 1rem;
+      }
+      .cards{
+        justify-content: center;
+      }
+      .single_card{
+        margin-top: 1rem;
+      }
+      .up_div{
+        flex-direction: column;
+        align-items: start;
+        gap: 1rem;
+      }
 }
 @media (max-width: 768px) {
   .blue_banner {
@@ -762,8 +863,63 @@ footer {
     margin: 0.5rem 0;
     justify-content: center;
   }
+  .emoji_btn_div{
+    flex-direction: column;
+  }
+  .emoji_btn_div button{
+    width: 100%;
+  }
+  .percents {
+    flex-direction: column;
+    text-align: center;
+  }
+  .percents p{
+    padding-top: 0.5rem;
+  }
+  .footer_text {
+    margin-top: 1rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+  }
+ 
+  .bottom_footer{
+    flex-direction: column;
+    align-items: start;
+    margin-bottom: 1rem;
+  }
+  .bottom_footer a{
+    margin-top: 0.5rem;
+  }
+  .social_media{
+    flex-direction: column;
+    align-items: start;
+    margin-bottom: 1rem;
+  }
+  .icons{
+    margin-top: 1rem;
+    width: 100%;
+    justify-content: space-between;
+  }
 }
 
+@media (max-width: 481px) {
+  .footer_links{
+    display: none
+  }
+  .mobile_footer{
+    display: block;
+    margin-top: 1rem;
+    font-size: 15px;
+    width: 100%;
+  }
+  .mobile_footer h2{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
 @media (max-width: 450px) {
   .section_1 {
     padding: 1rem;
