@@ -717,38 +717,45 @@ footer {
  color: #454545;
  margin-top: 0.5rem;
 }
-/* Styling for the accordion */
+
 .accordion {
   display: block;
-  width: 100%;/* Adjust the width as needed */
+  width: 100%;
 }
 
-/* Hide checkboxes */
+
 input[type="checkbox"] {
   display: none;
 }
 
-/* Styling for accordion labels */
 label {
   display: block;
   cursor: pointer;
 }
 
-/* Styling for accordion contents */
 .content {
-  display: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease; 
 }
-
-/* Show content when checkbox is checked */
+.accordion input[type="checkbox"]:checked + label h2 i,
+  .accordion input[type="checkbox"]:not(:checked) + label h2 i {
+    transition: transform 0.3s ease;
+    transform-origin: center;
+  }
 input[type="checkbox"]:checked + label + .content {
-  display: flex;
+  max-height: 500px;
 }
 input[type="checkbox"]:checked + label h2 i {
   transform: rotate(90deg);
-  transition: transform 0.3s ease;
+}
+.accordion input[type="checkbox"]:not(:checked) + label h2 i {
+  transform: rotate(0deg);
 }
 /* **********************SIDEBAR********************************************* */
-
+#sidebar,#sidebar2{
+  display: none;
+}
 #sidebar {
   position: fixed;
   top: 0;
@@ -757,6 +764,7 @@ input[type="checkbox"]:checked + label h2 i {
   height: 100%;
   background-color: #f1f1f1;
   transition: right 0.3s ease;
+  z-index: 101;
 }
 
 #sidebar.active {
@@ -769,12 +777,13 @@ input[type="checkbox"]:checked + label h2 i {
 }
 
 #sidebar li {
-  padding: 10px;
+  padding: 20px 10px;
 }
 
 #sidebar a {
   text-decoration: none;
-  color: #333;
+  color: #000;
+  font-weight: 700;
 }
 #sidebar2 {
   position: fixed;
@@ -794,15 +803,63 @@ input[type="checkbox"]:checked + label h2 i {
 #sidebar2 ul {
   list-style: none;
   padding: 0;
+ 
 }
 
 #sidebar2 li {
-  padding: 10px;
+  padding: 20px 10px;
 }
 
 #sidebar2 a {
   text-decoration: none;
-  color: #333;
+  color: #000;
+  font-weight: 700;
+}
+.sidebar_nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+.sidebar_nav span{
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.sidebar_btns{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 0.5rem;
+  gap: 0.5rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  box-shadow:0 -10px 12px rgba(29,28,29,.04);
+  z-index: 102;
+  background-color: #fff;
+}
+.sidebar_btns button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  font-size: 14px;
+  padding: 1rem;
+}
+.sidebar_btns button:first-child{
+  color: #541554;
+  border: 2px solid #541554;
+  border-radius: 5px;
+  font-weight: 700;
+  background-color: #fff;
+}
+.sidebar_btns button:last-child{
+  color: #fff;
+  background-color: #541554;
+  border: none;
+  border-radius: 5px;
+  font-weight: 700;
 }
 
 
@@ -897,6 +954,9 @@ input[type="checkbox"]:checked + label h2 i {
     width: 85%;
     display: grid;
     grid-template-columns: 20% 20% 20% 20% 20%;
+  }
+  #sidebar,#sidebar2{
+    display: block;
   }
 }
 @media (max-width: 1000px) {
@@ -1008,6 +1068,21 @@ input[type="checkbox"]:checked + label h2 i {
   }
 }
 
+@media (max-width: 500px) {
+  .sidebar_btns{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem 1rem;
+    gap: 1rem;
+  }
+  .sidebar_btns button{
+    width: 100%;
+    max-width: 300px;
+  }
+
+}
 @media (max-width: 481px) {
   .footer_links{
     display: none

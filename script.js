@@ -20,6 +20,8 @@ sidebarToggle.addEventListener('click', () => {
  
   sidebar.classList.toggle('active');
 });
+
+
 const sidebarToggle2 = document.getElementById('sidebar-toggle2');
 const sidebar2 = document.getElementById('sidebar2');
 
@@ -30,3 +32,14 @@ sidebarToggle2.addEventListener('click', () => {
 });
 
 
+const closeBtn=document.getElementById("close_btn");
+const closeBtn2=document.getElementById("close_btn2");
+
+closeBtn.addEventListener('click', () => {
+ 
+  sidebar.classList.remove('active');
+});
+closeBtn2.addEventListener('click', () => {
+ 
+  sidebar2.classList.remove('active');
+});
