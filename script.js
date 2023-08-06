@@ -69,3 +69,10 @@ document.addEventListener('DOMContentLoaded', function() {
     productLink2.classList.toggle('active');
   });
 });
+
+
+const config = {
+  type: "carousel",
+  perView: 1,
+};
+new Glide(".glide", config).mount();

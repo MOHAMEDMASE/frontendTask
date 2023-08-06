@@ -510,6 +510,33 @@ header {
   align-items: center;
   flex-wrap: wrap;
 }
+.glide{
+  overflow: hidden;
+  background-color: #f4ede4;
+  display: none;
+  padding: 1rem;
+ 
+}
+.glide__slides{
+  display: flex;
+  justify-content: center;
+}
+.glide li{
+  list-style-type:none;
+}
+.glide__slide{
+ display: flex;
+ justify-content: center;
+}
+.glide__arrows{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.glide__arrows button{
+  border:none;
+  margin: 0 0.2rem;
+}
 .single_card {
   background-color: #fff;
   width: 285px;
@@ -924,7 +951,6 @@ input[type="checkbox"]:checked + label h2 i {
 
 
 
-
 /* **********************SIDEBAR********************************************* */
 
 /* **************************FOOTER************************************* */
@@ -1129,6 +1155,15 @@ input[type="checkbox"]:checked + label h2 i {
   }
 }
 
+@media (max-width: 635px) {
+  .main_cards_div{
+    display: none;
+  }
+  .glide{
+    display: block
+  }
+
+}
 @media (max-width: 500px) {
   .sidebar_btns{
     display: flex;
