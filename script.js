@@ -10,3 +10,23 @@ window.addEventListener("scroll", () => {
     second_nav.classList.remove("show");
   }
 });
+
+// **********************************************************************
+const sidebarToggle = document.getElementById('sidebar-toggle');
+const sidebar = document.getElementById('sidebar');
+
+
+sidebarToggle.addEventListener('click', () => {
+ 
+  sidebar.classList.toggle('active');
+});
+const sidebarToggle2 = document.getElementById('sidebar-toggle2');
+const sidebar2 = document.getElementById('sidebar2');
+
+
+sidebarToggle2.addEventListener('click', () => {
+ 
+  sidebar2.classList.toggle('active');
+});
+
+

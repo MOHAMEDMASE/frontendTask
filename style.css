@@ -704,6 +704,111 @@ footer {
 .mobile_footer{
     display: none;
 }
+.mobile_footer h2{
+  margin-top: 0.5rem;
+}
+.mobile_footer_links{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+.mobile_footer_links a{
+ text-decoration: none;
+ color: #454545;
+ margin-top: 0.5rem;
+}
+/* Styling for the accordion */
+.accordion {
+  display: block;
+  width: 100%;/* Adjust the width as needed */
+}
+
+/* Hide checkboxes */
+input[type="checkbox"] {
+  display: none;
+}
+
+/* Styling for accordion labels */
+label {
+  display: block;
+  cursor: pointer;
+}
+
+/* Styling for accordion contents */
+.content {
+  display: none;
+}
+
+/* Show content when checkbox is checked */
+input[type="checkbox"]:checked + label + .content {
+  display: flex;
+}
+input[type="checkbox"]:checked + label h2 i {
+  transform: rotate(90deg);
+  transition: transform 0.3s ease;
+}
+/* **********************SIDEBAR********************************************* */
+
+#sidebar {
+  position: fixed;
+  top: 0;
+  right: -100%; 
+  width: 100%; 
+  height: 100%;
+  background-color: #f1f1f1;
+  transition: right 0.3s ease;
+}
+
+#sidebar.active {
+  right: 0; 
+}
+
+#sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+#sidebar li {
+  padding: 10px;
+}
+
+#sidebar a {
+  text-decoration: none;
+  color: #333;
+}
+#sidebar2 {
+  position: fixed;
+  top: 0;
+  right: -100%; 
+  width: 100%; 
+  height: 100%;
+  background-color: #f1f1f1;
+  transition: right 0.3s ease;
+  z-index: 101;
+}
+
+#sidebar2.active {
+  right: 0; 
+}
+
+#sidebar2 ul {
+  list-style: none;
+  padding: 0;
+}
+
+#sidebar2 li {
+  padding: 10px;
+}
+
+#sidebar2 a {
+  text-decoration: none;
+  color: #333;
+}
+
+
+
+/* **********************SIDEBAR********************************************* */
+
 /* **************************FOOTER************************************* */
 /* **************************MOBILE************************************ */
 @media (max-width: 1200px) {
